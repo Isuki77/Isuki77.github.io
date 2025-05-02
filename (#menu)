@@ -1,0 +1,69 @@
+/* Get Started Button */
+#get-started-btn {
+    background-color: #68a5ad;
+    color: white;
+    padding: 20px 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Minecraft', sans-serif;
+    transition: background-color 0.3s;
+}
+
+#get-started-btn:hover {
+    background-color: #44b1a1;
+}
+3. JavaScript Functionality:
+This is where you define what happens when the "Get Started" button is clicked. Typically, you might want to hide the landing page and display the game. Here's how to do that:
+
+In your JavaScript (script.js):
+javascript
+Copy
+Edit
+document.addEventListener('DOMContentLoaded', function () {
+    const getStartedButton = document.getElementById('get-started-btn');
+    const menu = document.getElementById('menu');
+    const gameContainer = document.getElementById('game-container');
+    
+    // Event listener for "Get Started" button
+    getStartedButton.addEventListener('click', function () {
+        // Hide the menu
+        menu.style.display = 'none';
+
+        // Show the game container
+        gameContainer.style.display = 'block';
+
+        // Initialize the game (this could be expanded with game logic)
+        startGame();
+    });
+
+    // Function to initialize the game
+    function startGame() {
+        // Example: Change background of the game to green
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#00FF00'; // Minecraft grass green
+        ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the canvas with color
+        ctx.fillStyle = '#000';
+        ctx.font = '30px Minecraft';
+        ctx.fillText('Game Started!', 300, 250); // Display some text on the canvas
+
+        // Example animation (a red box moving across the canvas)
+        let x = 0;
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+            ctx.fillStyle = '#00FF00'; // Fill with green again
+            ctx.fillRect(0, 0, canvas.width, canvas.height); // Refill background
+            ctx.fillStyle = '#FF0000'; // Red square color
+            ctx.fillRect(x, 250, 50, 50); // Draw moving red box
+            x += 5; // Move the box to the right
+
+            if (x > canvas.width) x = 0; // Reset the box if it moves out of screen
+
+            requestAnimationFrame(animate); // Keep animating
+        }
+
+        animate(); // Start the animation loop
+    }
+});
