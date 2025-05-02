@@ -1,0 +1,40 @@
+body {
+    font-family: 'Minecraft', sans-serif;
+    background-color: #1e2a1f;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu Style */
+#menu {
+    margin-top: 100px;
+}
+
+#continue-btn {
+    background-color: #68a5ad;
+    color: white;
+    padding: 20px 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Minecraft', sans-serif;
+    transition: background-color 0.3s;
+}
+
+#continue-btn:hover {
+    background-color: #44b1a1;
+}
+
+/* Game Container */
+#game-container {
+    display: none;
+    text-align: center;
+}
+
+/* Canvas */
+#gameCanvas {
+    border: 5px solid #7f8c8d;
+}
