@@ -1,0 +1,8 @@
+<section id="games">
+  <h2>Games</h2>
+  <ul>
+    <li><a href="https://scratch.mit.edu/projects/your-game-id-1" target="_blank">Cool Platformer</a></li>
+    <li><a href="https://scratch.mit.edu/projects/your-game-id-2" target="_blank">Clicker Challenge</a></li>
+    <li><a href="https://your-github-username.github.io/your-game-folder/" target="_blank">Maze Escape</a></li>
+  </ul>
+</section>
